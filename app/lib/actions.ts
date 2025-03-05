@@ -92,6 +92,7 @@ export async function updateInvoice(id: string, prevState: State, formData: Form
             WHERE id = ${id}
         `;
     } catch (error) {
+        console.log(error)
         return { message: 'Database Error: Failed to Update Invoice.' };
     }
     
@@ -108,6 +109,7 @@ export async function authenticate(
     prevState: string | undefined,
     formData: FormData,
 ) {
+    console.log(prevState)
     try {
       await signIn('credentials', formData);
     } catch (error) {
