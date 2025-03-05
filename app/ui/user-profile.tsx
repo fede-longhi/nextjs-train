@@ -14,7 +14,7 @@ export default async function UserProfile() {
                 alt={session?.user?.name ? session?.user?.name : "user image"}
                 width={32}
                 height={32}
-                className='rounded-full'
+                className='rounded-full'    
                 />
             }
             <h1 className="overflow-hidden text-ellipsis">{session?.user?.email}</h1>

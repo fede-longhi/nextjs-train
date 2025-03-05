@@ -1,5 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
-import { getUser, createUser } from '@/app/lib/user-actions';
+// import { getUser, createUser } from '@/app/lib/user-actions';
  
 export const authConfig = {
     pages: {
@@ -20,20 +20,20 @@ export const authConfig = {
         },
         async signIn({ account, profile }) {
             console.log('sign in');
-            if (account?.provider === "google") {
-                if (profile == null) {
-                    return false
-                }
-                if (profile?.email && profile?.name) {
-                    console.log(profile)
-                    const user = await getUser(profile.email)
-                    if (!user) {
-                        await createUser({id: "", name: profile.name, email: profile.email, password: "", image_url: profile.picture})
-                    }
-                }
-                return true
-                // return profile?.email_verified && profile?.email?.endsWith("@example.com")
-            }
+            // if (account?.provider === "google") {
+            //     if (profile == null) {
+            //         return false
+            //     }
+            //     if (profile?.email && profile?.name) {
+            //         console.log(profile)
+            //         const user = await getUser(profile.email)
+            //         if (!user) {
+            //             await createUser({id: "", name: profile.name, email: profile.email, password: "", image_url: profile.picture})
+            //         }
+            //     }
+            //     return true
+            //     // return profile?.email_verified && profile?.email?.endsWith("@example.com")
+            // }
             return true
         },
         async session({session, user}) {
