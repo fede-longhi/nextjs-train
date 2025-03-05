@@ -60,6 +60,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
             VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
         `;
     } catch (error) {
+        console.log(error);
         return { message: 'Database Error: Failed to Insert Invoice.' };
     }
     revalidatePath('/dashboard/invoices');

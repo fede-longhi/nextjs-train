@@ -10,7 +10,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 export default function SocialLogin() {
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/dashboard';
+  // const callbackUrl = searchParams.get('callbackUrl') || '/dashboard';
   const [errorMessage, formAction, isPending] = useActionState(
     doSocialLogin,
     undefined,
